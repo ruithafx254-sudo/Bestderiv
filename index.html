@@ -169,7 +169,7 @@ button:active {
 .theme-indicator {
     width: 14px;
     height: 14px;
-    background: #fff;
+    background: #fffff;
     border-radius: 50%;
     position: absolute;
     top: 2px;
@@ -1040,7 +1040,7 @@ button:active {
     .auth-top { position: absolute; top: 40px; left: 50px; right: 50px; margin: 0; }
     .auth-card { width: 440px; margin: 0; }
 
-    .nav { position: fixed; bottom: 0; width: 100%; padding: 14px; justify-content: center; gap: 80px; }
+    .nav { position: fixed; bottom: 0; width: icon; width: 100%; padding: 14px; justify-content: center; gap: 80px; }
     .nav-item { flex: none; flex-direction: row; gap: 10px; }
 
     .overlay { align-items: center; }
@@ -1061,7 +1061,7 @@ button:active {
             <div class="nav-pill">🎁 Free Bots</div>
         </div>
         <div class="user-balance-badge" id="top-bal-badge">
-            💵 <span id="top-balance-val">0.00 USD</span>
+            <span id="account-flag-icon">🇺🇸</span> <span id="top-balance-val">0.00 USD</span>
         </div>
     </div>
 
@@ -2224,6 +2224,12 @@ function updateBalance(){
     const formatted = `${bal.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})}`;
     document.getElementById("balance").innerText = `$${formatted}`;
     document.getElementById("top-balance-val").innerText = `${formatted} USD`;
+    
+    // Switch the badge icon based on whether it's Real (USD Flag 🇺🇸) or Demo (Demo icon 🧪 / 🔶)
+    const flagIconElement = document.getElementById("account-flag-icon");
+    if (flagIconElement) {
+        flagIconElement.innerText = isReal ? "🇺🇸" : "🧪";
+    }
 }
 
 function switchTab(id, el){
