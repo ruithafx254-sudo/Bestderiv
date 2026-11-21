@@ -169,7 +169,7 @@ button:active {
 .theme-indicator {
     width: 14px;
     height: 14px;
-    background: #fffff;
+    background: #ffffff;
     border-radius: 50%;
     position: absolute;
     top: 2px;
@@ -1326,7 +1326,7 @@ button:active {
                     <div class="profile-item"><span style="color:var(--text);">Help & Support</span><a href="https://t.me/bestderivsupport" target="_blank" style="color:var(--info); font-weight:700; text-decoration:none;">Contact Us</a></div>
                     <div class="profile-item">
                         <span style="color:var(--text);">Community Channel</span>
-                        <a href="https://t.me/bestderivtrading" target="_blank" style="color:var(--primary-bright); font-weight:700; text-decoration:none;">Join Bestderiv</a>
+                        <a href="https://t.me/megawavetrading" target="_blank" style="color:var(--primary-bright); font-weight:700; text-decoration:none;">Join Megawave Trading</a>
                     </div>
                 </div>
                 <button class="logout" onclick="logout()">Log Out</button>
@@ -2225,7 +2225,6 @@ function updateBalance(){
     document.getElementById("balance").innerText = `$${formatted}`;
     document.getElementById("top-balance-val").innerText = `${formatted} USD`;
     
-    // Switch the badge icon based on whether it's Real (USD Flag 🇺🇸) or Demo (Demo icon 🧪 / 🔶)
     const flagIconElement = document.getElementById("account-flag-icon");
     if (flagIconElement) {
         flagIconElement.innerText = isReal ? "🇺🇸" : "🧪";
